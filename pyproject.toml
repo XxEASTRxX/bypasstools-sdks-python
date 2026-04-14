@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "bypasstools"
+version = "1.0.0"
+description = "Official Python SDK for the BypassTools API"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = []
+keywords = ["bypasstools", "bypass", "linkvertise", "api"]
+
+[project.urls]
+Homepage = "https://bypass.tools"
+Repository = "https://github.com/XxEASTRxX/bypasstools-sdks-python.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bypasstools*"]
