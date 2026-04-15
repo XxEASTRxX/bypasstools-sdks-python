@@ -1,0 +1,10 @@
+Metadata-Version: 2.2
+Name: bypasstools
+Version: 1.0.0
+Summary: Official Python SDK for the BypassTools API
+License: MIT
+Project-URL: Homepage, https://bypass.tools
+Project-URL: Repository, https://github.com/XxEASTRxX/bypasstools-sdks-python.git
+Keywords: bypasstools,bypass,linkvertise,api
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown

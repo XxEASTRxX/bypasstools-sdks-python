@@ -111,7 +111,7 @@ class BypassTools:
             raise BypassToolsError("url is required", "MISSING_URL")
         data = self._request("POST", "/bypass/direct", {"url": url, "refresh": refresh})
         return BypassResult(
-            result_url   = data.get("result", ""),
+            result_url   = data.get("resultUrl") or data.get("result", ""),
             cached       = data.get("cached", False),
             process_time = data.get("processTime"),
             request_id   = data.get("requestId"),
@@ -165,7 +165,7 @@ class BypassTools:
         while time.monotonic() < deadline:
             time.sleep(poll_interval)
             result = self.get_task_result(task_id)
-            if result.status == "completed":
+            if result.status in ("completed", "success"):
                 return BypassResult(
                     result_url   = result.result_url or "",
                     cached       = False,
@@ -241,7 +241,7 @@ try:
                 raise BypassToolsError("url is required", "MISSING_URL")
             data = await self._arequest("POST", "/bypass/direct", {"url": url, "refresh": refresh})
             return BypassResult(
-                result_url   = data.get("result", ""),
+                result_url   = data.get("resultUrl") or data.get("result", ""),
                 cached       = data.get("cached", False),
                 process_time = data.get("processTime"),
                 request_id   = data.get("requestId"),
@@ -270,7 +270,7 @@ try:
             while asyncio.get_event_loop().time() < deadline:
                 await asyncio.sleep(poll_interval)
                 result = await self.get_task_result(task_id)
-                if result.status == "completed":
+                if result.status in ("completed", "success"):
                     return BypassResult(result_url=result.result_url or "", cached=False, process_time=None, request_id=task_id)
                 if result.status == "failed":
                     raise BypassToolsError(result.error or "Task failed", "TASK_FAILED")
