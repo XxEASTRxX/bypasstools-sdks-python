@@ -1,6 +1,8 @@
 # bypasstools
 
-Official Python SDK for the [BypassTools](https://bypass.tools) API.
+Official Python SDK for the [BypassTools](https://bypass.tools) API — the fastest way to bypass link shorteners programmatically.
+
+**Links:** [bypass.tools](https://bypass.tools) · [API Dashboard](https://bypass.tools/dashboard) · [eas.lol](https://eas.lol)
 
 ## Installation
 
@@ -79,4 +81,4 @@ except BypassToolsError as e:
 
 ## License
 
-MIT
+MIT — built by [EAS](https://eas.lol) · [bypass.tools](https://bypass.tools)
