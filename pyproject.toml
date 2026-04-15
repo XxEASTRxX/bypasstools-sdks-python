@@ -4,13 +4,21 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bypasstools"
-version = "1.0.0"
+version = "1.0.1"
 description = "Official Python SDK for the BypassTools API"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.8"
 dependencies = []
 keywords = ["bypasstools", "bypass", "linkvertise", "api"]
+authors = [
+    { name = "BypassTools", email = "support@bypass.tools" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [project.urls]
 Homepage = "https://bypass.tools"
