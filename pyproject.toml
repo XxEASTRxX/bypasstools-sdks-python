@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bypasstools"
-version = "1.0.2"
+version = "1.0.3"
 description = "Official Python SDK for the BypassTools API"
-readme = "README.md"
+readme = {file = "README.md", content-type = "text/markdown"}
 license = { text = "MIT" }
 requires-python = ">=3.8"
 dependencies = []

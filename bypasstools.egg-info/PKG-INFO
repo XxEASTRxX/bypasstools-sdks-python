@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: bypasstools
-Version: 1.0.2
+Version: 1.0.3
 Summary: Official Python SDK for the BypassTools API
 Author-email: BypassTools <support@bypass.tools>
 License: MIT
@@ -15,7 +15,9 @@ Description-Content-Type: text/markdown
 
 # bypasstools
 
-Official Python SDK for the [BypassTools](https://bypass.tools) API.
+Official Python SDK for the [BypassTools](https://bypass.tools) API — the fastest way to bypass link shorteners programmatically.
+
+**Links:** [bypass.tools](https://bypass.tools) · [API Dashboard](https://bypass.tools/dashboard) · [eas.lol](https://eas.lol)
 
 ## Installation
 
@@ -94,4 +96,4 @@ except BypassToolsError as e:
 
 ## License
 
-MIT
+MIT — built by [EAS](https://eas.lol) · [bypass.tools](https://bypass.tools)
