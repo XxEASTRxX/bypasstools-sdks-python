@@ -77,6 +77,7 @@ class BypassTools:
             headers={
                 "x-api-key":    self._api_key,
                 "Content-Type": "application/json",
+                "User-Agent":   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
             },
         )
         try:
@@ -111,7 +112,7 @@ class BypassTools:
             raise BypassToolsError("url is required", "MISSING_URL")
         data = self._request("POST", "/bypass/direct", {"url": url, "refresh": refresh})
         return BypassResult(
-            result_url   = data.get("resultUrl") or data.get("result", ""),
+            result_url   = data.get("result") or data.get("resultUrl", ""),
             cached       = data.get("cached", False),
             process_time = data.get("processTime"),
             request_id   = data.get("requestId"),
@@ -218,7 +219,11 @@ try:
                 kwargs = {
                     "method":  method,
                     "url":     url,
-                    "headers": {"x-api-key": self._api_key, "Content-Type": "application/json"},
+                    "headers": {
+                        "x-api-key":    self._api_key,
+                        "Content-Type": "application/json",
+                        "User-Agent":   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                    },
                     "timeout": aiohttp.ClientTimeout(total=self._timeout),
                 }
                 if body:
@@ -241,7 +246,7 @@ try:
                 raise BypassToolsError("url is required", "MISSING_URL")
             data = await self._arequest("POST", "/bypass/direct", {"url": url, "refresh": refresh})
             return BypassResult(
-                result_url   = data.get("resultUrl") or data.get("result", ""),
+                result_url   = data.get("result") or data.get("resultUrl", ""),
                 cached       = data.get("cached", False),
                 process_time = data.get("processTime"),
                 request_id   = data.get("requestId"),
